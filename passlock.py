@@ -3,7 +3,7 @@ import string
 # import pyperlip
 class User:
     """
-    cretae User class that generates new instances of a user.
+    create User class that generates new instances of a user.
     
     """
     user_list = []
