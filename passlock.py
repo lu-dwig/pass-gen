@@ -47,4 +47,18 @@ class Credentials():
             if (user.username ==username and user.password == password):
                     a_user == user.username
         return a_user
-                
+    
+    def __init__(self,account,userName,password):
+        """
+        method that defines user credientials to be stored
+        """
+        self.account = account
+        self.userName = userName
+        self.password = password
+    
+    def save_details(self):
+        """
+        method to store new credentials to the credentials list 
+        """
+        Credentials.credentials_list.append(self)
+    
