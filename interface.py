@@ -2,7 +2,7 @@
 from passlock import User, Credentials
 
 def function():
-    print("              ____                         _____  _                               ")
+    print("              ____                          _____  _                               ")
 	print("              |  _ \                       / ____|| |                              ")
 	print("              | |_) )  ____  ___   ___    / ____  | |__    _____  _ _  ____        ")
 	print("              |  __/  / _  |/ __  / __    \___  \ |  __)  /  _  \| '_|/ __ \       ")
@@ -70,3 +70,17 @@ def check_credendtials(account):
 
     """
     return Credentials.if_credential_exist(account)
+
+def generate_Password():
+    '''
+    generates a random password for the user.
+    '''
+    auto_password=Credentials.generatePassword()
+    return auto_password
+def copy_password(account):
+    """
+    A funct that copies the password using the pyperclip framework
+    We import the framework then declare a function that copies the emails.
+    """
+    return Credentials.copy_password(account)
+
