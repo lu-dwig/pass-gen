@@ -2,7 +2,7 @@
 from passlock import User, Credentials
 
 def function():
-    print("               ____                         _____  _                               ")
+    print("              ____                         _____  _                               ")
 	print("              |  _ \                       / ____|| |                              ")
 	print("              | |_) )  ____  ___   ___    / ____  | |__    _____  _ _  ____        ")
 	print("              |  __/  / _  |/ __  / __    \___  \ |  __)  /  _  \| '_|/ __ \       ")
@@ -52,3 +52,21 @@ def display_accounts_details():
     """
     return Credentials.display_credentials()
 
+def delete_credential(credentials):
+    """
+    Function to delete a Credentials from credentials list
+
+    """
+    credentials.delete_credentials()
+
+def find_credential(account):
+    """
+    Function that finds a Credentials by an account name and returns the Credentials that belong to that account
+    """
+    return Credentials.find_credential(account)
+def check_credendtials(account):
+    """
+    Function that check if a Credentials exists with that account name and return true or false
+
+    """
+    return Credentials.if_credential_exist(account)
