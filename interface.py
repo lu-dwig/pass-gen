@@ -2,13 +2,13 @@
 from passlock import User, Credentials
 
 # def function():
-    # print("               ____                          ____  _                              ")
-	# print("              |  _ \                       / ____|| |                              ")
-	# print("              | |_) )  ____  ___   ___    / ____  | |__    _____  _ _  ____        ")
-	# print("              |  __/  / _  |/ __  / __    \___  \ |  __)  /  _  \| '_|/ __ \       ")
-	# print("              | |    / (_| |\__ \ \__ \    ___  / | |___ (  (_)  ) | |  ___/       ")
-	# print("              |_|    \_____| ___/  ___/   |____/  |_____) \_____/|_|  \____        ")
-# function()
+    #  print("               ____                          ____  _                              ")
+    #  print("              |  _ \                       / ____|| |                              ")
+    #  print("              | |_) )  ____  ___   ___    / ____  | |__    _____  _ _  ____        ")
+    #  print("              |  __/  / _  |/ __  / __    \___  \ |  __)  /  _  \| '_|/ __ \       ")
+    #  print("              | |    / (_| |\__ \ \__ \    ___  / | |___ (  (_)  ) | |  ___/       ")
+    #  print("              |_|    \_____| ___/  ___/   |____/  |_____) \_____/|_|  \____        ")
+#  function()
 
 def create_new_user(username,password):
     '''
@@ -16,6 +16,7 @@ def create_new_user(username,password):
     '''
     new_user = User(username,password)
     return new_user
+
 
 def save_user(user):
     '''
@@ -35,7 +36,7 @@ def login_user(username,password):
     check_user = Credentials.verify_user(username,password)
     return check_user
 
-def create_new_credential(account,userName,password):
+def create_new_credentials(account,userName,password):
     """
     Function that creates new credentials for a given user account
     """
@@ -52,18 +53,18 @@ def display_accounts_details():
     """
     return Credentials.display_credentials()
 
-def delete_credential(credentials):
+def delete_credentials(credentials):
     """
     Function to delete a Credentials from credentials list
 
     """
     credentials.delete_credentials()
 
-def find_credential(account):
+def find_credentials(account):
     """
     Function that finds a Credentials by an account name and returns the Credentials that belong to that account
     """
-    return Credentials.find_credential(account)
+    return Credentials.find_credentials(account)
 def check_credendtials(account):
     """
     Function that check if a Credentials exists with that account name and return true or false
@@ -137,7 +138,7 @@ def passlocker():
                     break
                 else:
                     print("Invalid password please try again")
-            save_credentials(create_new_credential(account,userName,password))
+            save_credentials(create_new_credentials(account,userName,password))
             print('\n')
             print(f"Account Credential for: {account} - UserName: {userName} - Password:{password} created succesfully")
             print('\n')
@@ -156,8 +157,8 @@ def passlocker():
         elif short_code == "fc":
             print("Enter the Account Name you want to search for")
             search_name = input().lower()
-            if find_credential(search_name):
-                search_credential = find_credential(search_name)
+            if find_credentials(search_name):
+                search_credential = find_credentials(search_name)
                 print(f"Account Name : {search_credential.account}")
                 print('-' * 50)
                 print(f"User Name: {search_credential.userName} Password :{search_credential.password}")
@@ -168,8 +169,8 @@ def passlocker():
         elif short_code == "d":
             print("Enter the account name of the Credentials you want to delete")
             search_name = input().lower()
-            if find_credential(search_name):
-                search_credential = find_credential(search_name)
+            if find_credentials(search_name):
+                search_credential = find_credentials(search_name)
                 print("_"*50)
                 search_credential.delete_credentials()
                 print('\n')

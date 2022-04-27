@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.9
 import unittest
 from passlock import User
 from passlock import Credentials
@@ -80,7 +81,7 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
     
-    def test_find_credentialr(self):
+    def test_find_credential(self):
         """
         test to check if we can find a credential entry by account name and display the details of the credential
         """
@@ -88,7 +89,7 @@ class TestCredentials(unittest.TestCase):
         test_credential = Credentials("Twitter","LudwigMurimi","Mfh45hfk") 
         test_credential.save_details()
 
-        the_credential = Credentials.find_credential("Twitter")
+        the_credential = Credentials.find_credentials("Twitter")
 
         self.assertEqual(the_credential.account,test_credential.account)
 
@@ -99,7 +100,7 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.save_details()
         the_credential = Credentials("Twitter", "LudwigMurimi", "Mfh45hfk")  
         the_credential.save_details()
-        credential_is_found = Credentials.if_credential_exist("Twitter")
+        credential_is_found = Credentials.if_credentials_exist("Twitter")
         self.assertTrue(credential_is_found)
 
     def test_display_all_saved_credentials(self):

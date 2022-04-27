@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.9
 import random
 import string
 # import pyperlip
@@ -38,7 +39,7 @@ class Credentials():
     """ 
     credentials_list =[]
     @classmethod
-    def verfy_user(cls,username,password):
+    def verify_user(cls,username,password):
         """
         method to very whether the user is in our user_list or not 
         """     
@@ -73,22 +74,22 @@ class Credentials():
         """
         method that takes in an account_name and returns the credentials that matches that account_name.
         """
-        for credential in cls.credentials_list:
-            if credential.account == account:
-                return credential
+        for credentials in cls.credentials_list:
+            if credentials.account == account:
+                return credentials
             
     @classmethod
     def copy_password(cls,account):
         found_credentials = Credentials.find_credentials(account)
-        pyperclip.copy(found_credentials.password)
+        # pyperclip.copy(found_credentials.password)
         
     @classmethod
     def if_credentials_exist(cls, account):
         """
         method that checks if a credential exists from the credentials list and returns true or false depending if the credential exists.
         """
-        for credential in cls.credentials_list:
-            if credential.account == account:
+        for credentials in cls.credentials_list:
+            if credentials.account == account:
                 return True
         return False
     @classmethod
